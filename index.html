@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Everyday Grocery</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./src/app.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <i class="fa fa-bars"></i>
+        <h1>the everyday <span>grocery</span></h1>
+        <div class="cart-btn">
+          <i class="fa fa-shopping-cart"></i>
+          <span class="item-count"></span>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <header class="headline">
+        <div class="banner">
+          <h1>we're here to serve only the best products for you</h1>
+          <a href="#products" class="shop-now-btn">shop now</a>
+        </div>
+      </header>
+      <section id="products" class="products">
+        <h1>our products</h1>
+        <div class="products-container"></div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>Home</p>
+      <p>About</p>
+      <p>Contact</p>
+    </footer>
+    <div class="cart-overlay">
+      <div class="cart">
+        <div class="cart-header">
+          <i class="fa fa-window-close"></i>
+          <h2>your cart</h2>
+        </div>
+        <div class="cart-items"></div>
+        <div class="cart-footer">
+          <h3>your total : rs.<span class="cart-total"></span></h3>
+          <div class="clear-cart-btn">clear cart</div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+    <script src="./src/app.js"></script>
+  </body>
+</html>

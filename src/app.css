@@ -1,0 +1,278 @@
+:root {
+  --primaryColor: rgb(8, 242, 110);
+  --secondaryColor: #333333;
+  --mainWhite: white;
+  --mainOrange: orange;
+  --mainTransition: all 500ms ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background-color: var(--secondaryColor);
+}
+
+.navbar i {
+  font-size: 1.5rem;
+  color: var(--primaryColor);
+}
+
+.navbar > h1 {
+  color: var(--primaryColor);
+}
+
+.cart-btn {
+  position: relative;
+  cursor: pointer;
+}
+
+.item-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--mainOrange);
+  padding: 0 5px;
+  border-radius: 30%;
+  color: var(--mainWhite);
+}
+
+.headline {
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../src/img/store.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.shop-now-btn {
+  background-color: var(--mainOrange);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: black;
+  transition: var(--mainTransition);
+}
+
+.shop-now-btn:hover {
+  color: var(--mainWhite);
+}
+
+.products {
+  text-align: center;
+  padding: 2rem;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-items: center;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  margin-top: 2rem;
+}
+
+.product-img {
+  display: block;
+  width: 100%;
+  max-height: 30rem;
+  transition: var(--mainTransition);
+}
+
+.img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-container:hover .add-btn {
+  transform: translateX(-1%);
+}
+
+.img-container:hover .product-img {
+  opacity: 0.5;
+}
+
+.add-btn {
+  position: absolute;
+  top: 70%;
+  right: 0;
+  background-color: var(--mainOrange);
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  transform: translateX(101%);
+  transition: var(--mainTransition);
+}
+
+.add-btn:hover {
+  color: var(--mainWhite);
+}
+
+.product > h3 {
+  text-transform: capitalize;
+  margin: 1rem 0;
+}
+
+.product > h4 {
+  color: var(--mainOrange);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--secondaryColor);
+  color: var(--primaryColor);
+  height: 100px;
+}
+
+.footer > p {
+  cursor: pointer;
+}
+.cart-item-img {
+  display: block;
+  width: 75px;
+  height: 75px;
+}
+
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(240, 157, 81, 0.5);
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: var(--mainTransition);
+}
+
+.show-cart-overlay {
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.cart {
+  background-color: var(--mainWhite);
+  float: right;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  overflow: scroll;
+  transition: var(--mainTransition);
+}
+
+.cart-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cart-header > i {
+  cursor: pointer;
+  color: var(--mainOrange);
+  font-size: 1.5rem;
+}
+
+.cart-header > h2 {
+  align-self: center;
+  text-transform: capitalize;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-column-gap: 2rem;
+  align-items: center;
+}
+
+.cart-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.product-info > h4 {
+  text-transform: capitalize;
+}
+
+.product-info > h5 {
+  text-transform: capitalize;
+  color: var(--mainOrange);
+}
+
+.remove-item {
+  color: gray;
+  cursor: pointer;
+  transition: var(--mainTransition);
+}
+
+.remove-item:hover {
+  color: black;
+}
+
+.amount-btn {
+  text-align: center;
+}
+
+.amount-btn > i {
+  cursor: pointer;
+  color: var(--mainOrange);
+}
+
+.cart-footer > h3 {
+  text-transform: capitalize;
+}
+
+.clear-cart-btn {
+  background-color: var(--mainOrange);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: var(--mainTransition);
+}
+
+.clear-cart-btn:hover {
+  color: var(--mainWhite);
+}
+
+@media screen and (min-width: 768px) {
+  .cart {
+    width: 40vw;
+  }
+  .footer {
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 2rem;
+  }
+}
